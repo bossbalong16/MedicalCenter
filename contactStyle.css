@@ -1,0 +1,237 @@
+/* ========== CONTACT INFO (Glass Style) ========== */
+
+.contact-info {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.info-box {
+    width: 90%;
+    max-width: 600px;
+
+    /* Glass effect */
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.25);
+
+    padding: 35px;
+    border-radius: 20px;
+
+    box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+    color: white;
+
+    animation: fadeInCont 1s ease;
+}
+
+@keyframes fadeInCont {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.info-box h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.4);
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-item h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: white;
+    opacity: 0.95;
+}
+
+.info-item p {
+    font-size: 17px;
+    opacity: 0.9;
+    line-height: 1.5;
+    color: #e6eeff;
+}
+
+.info-item a {
+    color: #aecdff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.info-item a:hover {
+    color: #66aaff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .info-box {
+        padding: 25px;
+    }
+    .info-box h2 {
+        font-size: 26px;
+    }
+}
+    
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1f45, #1a3c84, #0f1f45);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
+    overflow-x: hidden;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating glow */
+.floating {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255,255,255,0.12);
+    filter: blur(90px);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.f1 { top:12%; left:5%; }
+.f2 { top:58%; right:10%; animation-duration: 9s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+
+/* ========== HEADER ========== */
+#top-nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+}
+#top-nav img {
+    width:60px;
+    border-radius:50%;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+}
+#top-nav h2 {
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+#top-nav ul {
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+#top-nav ul li a {
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.25s;
+}
+#top-nav ul li a:hover {
+    color:#66aaff;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    margin-top:50px;
+    text-align:center;
+    color:white;
+    padding: 0 20px;
+}
+.hero h1 {
+    font-size:48px;
+    font-weight:900;
+    margin-bottom:15px;
+    text-shadow:0px 0px 10px rgba(0,0,0,0.6);
+}
+.hero p {
+    font-size:19px;
+    opacity:0.9;
+    max-width:650px;
+    margin:auto;
+}
+
+/* ========== FEATURE CARDS (Glass) ========== */
+.features {
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:20px;
+    flex-wrap:wrap;
+}
+.card {
+    width:300px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:20px;
+    box-shadow:0 20px 35px rgba(0,0,0,0.25);
+    color:white;
+    text-align:center;
+    transition:0.25s;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:0 25px 40px rgba(0,0,0,0.35);
+}
+.card h3 {
+    font-size:22px;
+    margin-bottom:10px;
+    font-weight:800;
+}
+.card p {
+    font-size:15px;
+    opacity:0.85;
+    margin-bottom:15px;
+}
+.card button {
+    padding:10px 18px;
+    background:#4c8dff;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.25s;
+}
+.card button:hover {
+    background:#3274e6;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align:center;
+    color:white;
+    opacity:0.7;
+    font-size:14px;
+    margin-top:80px;
+    padding-bottom:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    #top-nav {
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+    #top-nav ul { gap:15px; }
+}

@@ -1,0 +1,198 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* BODY BACKGROUND */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1f45, #1a3c84, #0f1f45);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
+    overflow-x: hidden;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* SMOOTH FLOATING SHAPES */
+.floating {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255,255,255,0.10);
+    filter: blur(80px);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.f1 { top:10%; left:5%; }
+.f2 { top:60%; right:10%; animation-duration: 9s; }
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-40px); }
+}
+
+/* HEADER BAR */
+#logo-bar {
+    position: relative;
+    z-index: 3;
+    padding: 18px 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+#logo-bar img {
+    width:60px;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.4));
+    border-radius: 50%;
+}
+#logo-bar h2 {
+    color:white;
+    font-size:30px;
+    font-weight:800;
+    letter-spacing: 1px;
+    text-shadow: 0px 0px 8px rgba(0,0,0,0.5);
+}
+
+/* CONTAINER */
+#container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* GLASS EFFECT FORM */
+#App-Form {
+    width: 520px;
+    padding: 45px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 25px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.25);
+    animation: fadeIn 1s ease;
+    color:white;
+}
+@keyframes fadeIn {
+    from { opacity:0; transform: translateY(25px); }
+    to { opacity:1; transform: translateY(0); }
+}
+
+/* FORM TITLE */
+h1 {
+    text-align:center;
+    font-size:36px;
+    font-weight:900;
+    margin-bottom:30px;
+    color:white;
+}
+
+/* INPUT STYLING */
+label {
+    display:block;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:6px;
+    color:#e2e2e2;
+}
+input, select, textarea {
+    width:100%;
+    padding:13px;
+    border-radius:12px;
+    font-size:15px;
+    border:2px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.12);
+    color:white;
+    outline:none;
+    transition:0.25s;
+}
+input:focus, select:focus, textarea:focus {
+    border-color:#66aaff;
+    box-shadow:0 0 10px rgba(102,170,255,0.6);
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: rgba(255,255,255,0.12);
+    color: white;
+}
+
+select option {
+    background-color: rgba(0,0,0,0.4) !important;
+    color: white;
+}
+
+
+/* BUTTON */
+button {
+    width:100%;
+    padding:14px;
+    margin-top:10px;
+    background:#4c8dff;
+    border:none;
+    border-radius:12px;
+    font-size:19px;
+    color:white;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.25s;
+}
+button:hover {
+    background:#3274e6;
+    transform: scale(1.03);
+}
+
+/* MODAL (CUSTOM CONFIRMATION) */
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    align-items:center;
+    justify-content:center;
+    z-index: 99;
+}
+.modal-box {
+    background:white;
+    width: 420px;
+    padding:25px;
+    border-radius:18px;
+    animation: popUp 0.4s ease;
+}
+@keyframes popUp {
+    from { transform: scale(0.7); opacity:0; }
+    to { transform: scale(1); opacity:1; }
+}
+.modal-box h3 { font-size:22px; font-weight:800; margin-bottom:10px; }
+.modal-box pre {
+    background:#f7f7f7;
+    padding:15px;
+    border-radius:10px;
+    font-size:14px;
+    max-height:250px;
+    overflow-y:auto;
+}
+.modal-buttons {
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+.modal-buttons button {
+    width:48%;
+    padding:12px;
+}
+
+@media(max-width:600px){
+    #App-Form { width:95%; padding:25px; }
+    #logo-bar { flex-direction:column; text-align:center; }
+}
+footer {
+    text-align:center;
+    color:white;
+    opacity:0.7;
+    font-size:14px;
+    margin-top:80px;
+    padding-bottom:30px;
+}

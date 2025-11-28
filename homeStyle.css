@@ -1,0 +1,187 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1f45, #1a3c84, #0f1f45);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
+    overflow-x: hidden;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating glow */
+.floating {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255,255,255,0.12);
+    filter: blur(90px);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.f1 { top:12%; left:5%; }
+.f2 { top:58%; right:10%; animation-duration: 9s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+
+/* ========== HEADER ========== */
+#top-nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+}
+#top-nav img {
+    width:60px;
+    border-radius:50%;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+}
+#top-nav h2 {
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+#top-nav ul {
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+#top-nav ul li a {
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.25s;
+}
+#top-nav ul li a:hover {
+    color:#66aaff;
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+    margin-top:50px;
+    text-align:center;
+    color:white;
+    padding: 0 20px;
+}
+.hero h1 {
+    font-size:48px;
+    font-weight:900;
+    margin-bottom:15px;
+    text-shadow:0px 0px 10px rgba(0,0,0,0.6);
+}
+.hero p {
+    font-size:19px;
+    opacity:0.9;
+    max-width:650px;
+    margin:auto;
+}
+
+/* ========== FEATURE CARDS (Glass) ========== */
+.features {
+    margin-top:60px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:20px;
+    flex-wrap:wrap;
+}
+.card {
+    width:300px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(18px);
+    padding:25px;
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:20px;
+    box-shadow:0 20px 35px rgba(0,0,0,0.25);
+    color:white;
+    text-align:center;
+    transition:0.25s;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:0 25px 40px rgba(0,0,0,0.35);
+}
+.card h3 {
+    font-size:22px;
+    margin-bottom:10px;
+    font-weight:800;
+}
+.card p {
+    font-size:15px;
+    opacity:0.85;
+    margin-bottom:15px;
+}
+.card button {
+    padding:10px 18px;
+    background:#4c8dff;
+    border:none;
+    border-radius:10px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.25s;
+}
+.card button:hover {
+    background:#3274e6;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align:center;
+    color:white;
+    opacity:0.7;
+    font-size:14px;
+    margin-top:80px;
+    padding-bottom:30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    #top-nav {
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+    #top-nav ul { gap:15px; }
+}
+
+.card.patient-record {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #ffe6e6, #fff0f0);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card.patient-record:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+.card.patient-record .prec, .lebal{
+    color: black;
+}
+
+.card.patient-record button {
+    background-color: #ff4b5c;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.card.patient-record button:hover {
+    background-color: #e03e50;
+}

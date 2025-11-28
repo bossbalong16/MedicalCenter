@@ -1,0 +1,161 @@
+/* ========== GLOBAL RESET ========== */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1f45, #1a3c84, #0f1f45);
+    background-size: 300% 300%;
+    animation: gradientBG 12s ease infinite;
+    overflow-x: hidden;
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* FLOATING LIGHTS */
+.floating {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    background: rgba(255,255,255,0.12);
+    filter: blur(90px);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.f1 { top:10%; left:6%; }
+.f2 { top:65%; right:10%; animation-duration: 9s; }
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to { transform: translateY(-40px); }
+}
+
+/* ========== HEADER BAR ========== */
+#top-nav {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+}
+#top-nav img {
+    width:60px;
+    border-radius:50%;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.5));
+}
+#top-nav h2 {
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+#top-nav ul {
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+#top-nav ul li a {
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.25s;
+}
+#top-nav ul li a:hover {
+    color:#66aaff;
+}
+
+/* ========== TITLE SECTION ========== */
+.title-section {
+    margin-top:40px;
+    text-align:center;
+    color:white;
+}
+.title-section h1 {
+    font-size:42px;
+    font-weight:900;
+    text-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+.title-section p {
+    opacity:0.85;
+    font-size:17px;
+    margin-top:5px;
+}
+
+/* ========== DOCTOR GRID ========== */
+.doctor-grid {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:60px 20px;
+    z-index: 10;
+    position: relative;
+}
+
+.doctor-card {
+    width:300px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:20px;
+    box-shadow:0 20px 35px rgba(0,0,0,0.25);
+    color:white;
+    padding:25px;
+    text-align:center;
+    transition:0.25s;
+}
+.doctor-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:0 30px 45px rgba(0,0,0,0.35);
+}
+
+.doctor-card img {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:0 0 10px rgba(255,255,255,0.4);
+}
+
+.doctor-card h3 {
+    margin-top:15px;
+    font-size:22px;
+    font-weight:800;
+}
+
+.doctor-card p {
+    margin-top:5px;
+    font-size:15px;
+    opacity:0.85;
+}
+
+.schedule-box {
+    margin-top:15px;
+    padding:12px;
+    background:rgba(255,255,255,0.12);
+    border-radius:12px;
+    font-size:14px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+    color:white;
+    opacity:0.7;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+    #top-nav {
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+    #top-nav ul { gap:15px; }
+}
